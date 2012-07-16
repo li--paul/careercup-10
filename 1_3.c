@@ -1,6 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
+void remove_dup_hash(char *str){
+
+	if(str == NULL) return;
+	size_t len = strlen(str);
+	if(len == 2) return;
+
+	int hash_table[256];
+	memset(hash_table, 0, sizeof(hash_table));
+
+	int tail = 0;
+
+	for(int i = 0; i < len; ++i){
+		if(hash_table[(int)str[i]] == 0){
+			hash_table[(int)str[i]] = 1;
+			str[tail] = str[i];
+			++tail;
+		}
+	}
+	str[tail] = 0;
+}
 void remove_dupchar(char *str){
 
 	if(str == NULL) return;
@@ -30,7 +50,7 @@ int main(int argc, char **argv){
 		return 0;
 	}
 
-	remove_dupchar(argv[1]);
+	remove_dup_hash(argv[1]);
 	printf("%s\n", argv[1]);
 
 	return 0;
