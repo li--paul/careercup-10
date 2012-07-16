@@ -1,6 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 
+
+void remove_dup_bitmap(char *str){
+	
+	if(str == NULL) return;
+	size_t len = strlen(str);
+	if(len == 2) return;
+	
+//	printf("%s\n", str);
+	int checker = 0;
+	int tail = 0;
+
+	for(int i = 0; i < len; ++i){
+		if((checker & (1 << (int)str[i])) == 0){
+			checker |= (1 << (int)str[i]);
+//			printf("%d\n", checker);
+			str[tail] = str[i];
+			++tail;
+		}
+		
+	}
+	str[tail] = 0;
+	
+}
+
 void remove_dup_hash(char *str){
 
 	if(str == NULL) return;
@@ -50,7 +74,7 @@ int main(int argc, char **argv){
 		return 0;
 	}
 
-	remove_dup_hash(argv[1]);
+	remove_dup_bitmap(argv[1]);
 	printf("%s\n", argv[1]);
 
 	return 0;
