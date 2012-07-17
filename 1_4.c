@@ -54,12 +54,12 @@ int main(){
 
 //	int result = 0;
 //	str1[3] = 'k';
-//	int result = anagram(str1, str2);
-	quick_sort(str2, 0, strlen(str2) - 1);
-	printf("%s\n", str2);
+	int result = anagram(str1, str2);
+//	quick_sort(str2, 0, strlen(str2) - 1);
+//	printf("%s\n", str2);
 //	printf("%s\n", str2);
 
-//	printf("%d\n", result);
+	printf("%d\n", result);
 
 	return 0;
 }
