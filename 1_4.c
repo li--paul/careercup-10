@@ -14,9 +14,9 @@ void swap(char *a, char *b){
 }
 
 char median(char a, char b, char c){
-	if((a < b && b < c) || (a > b && b > c)) return b;
-	if((b < a && a < c) || (b > a && a > c)) return a;
-	if((a < c && c < b) || (a > c && c > b)) return c;
+	if((a <= b && b <= c) || (a >= b && b >= c)) return b;
+	if((b <= a && a <= c) || (b >= a && a >= c)) return a;
+	if((a <= c && c <= b) || (a >= c && c >= b)) return c;
 	return -1;
 }
 
