@@ -44,7 +44,7 @@ void quick_sort(char *str, size_t left, size_t right){
 int anagram(char *str1, char *str2){
 	quick_sort(str1, 0, strlen(str1) - 1);
 	quick_sort(str2, 0, strlen(str2) - 1);
-	return strcmp(str1, str2);
+	return str1 == str2;
 }
 
 int main(){
