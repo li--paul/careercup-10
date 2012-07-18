@@ -20,16 +20,19 @@ char median(char a, char b, char c){
 	return -1;
 }
 
-void quick_sort(char *str, size_t left, size_t right){
+void quick_sort(char *str, int left, int right){
 	if(left < right){
 		char pivot = median(str[left], str[(left + right) / 2], str[right]);
-		int i = left - 1;
-		int j = right + 1;
+		int i = left;
+		int j = right;
 		while(1){
-			while(str[++i] < pivot){}
-			while(str[--j] > pivot){}
+			while(str[i] < pivot) ++i;
+			while(str[j] > pivot) --j;
 			if(i < j)
-				swap(&str[i], &str[j]);
+				if(str[i] == str[j])
+					--j;
+				else
+					swap(&str[i], &str[j]);
 			else 
 				break;
 
@@ -44,20 +47,21 @@ void quick_sort(char *str, size_t left, size_t right){
 int anagram(char *str1, char *str2){
 	quick_sort(str1, 0, strlen(str1) - 1);
 	quick_sort(str2, 0, strlen(str2) - 1);
-	return str1 == str2;
+	return strcmp(str1, str2);
 }
 
 int main(){
 
-	char str1[] = "abcdefg";
-	char str2[] = "gfedcab";
+	char str1[] = "abccfeg";
+	char str2[] = "agbcdef";
 
 //	int result = 0;
 //	str1[3] = 'k';
+//	if(strlen(str1) != strlen(str2)) return 0;
 	int result = anagram(str1, str2);
 //	quick_sort(str2, 0, strlen(str2) - 1);
-//	printf("%s\n", str2);
-//	printf("%s\n", str2);
+	printf("%s\n", str1);
+	printf("%s\n", str2);
 
 	printf("%d\n", result);
 
