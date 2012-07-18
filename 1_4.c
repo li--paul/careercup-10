@@ -74,7 +74,7 @@ int main(){
 
 //	int result = 0;
 //	str1[3] = 'k';
-//	if(strlen(str1) != strlen(str2)) return 0;
+	if(strlen(str1) != strlen(str2)) return 0;
 	int result = anagram_2(str1, str2);
 //	quick_sort(str2, 0, strlen(str2) - 1);
 	printf("%s\n", str1);
