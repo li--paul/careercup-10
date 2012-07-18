@@ -1,3 +1,11 @@
+/*
+ * replace all space in a string with "%20"
+ *
+ * by parker0203
+ *
+ */
+
+
 #include <stdio.h>
 #include <string.h>
 
