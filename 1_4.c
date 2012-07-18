@@ -50,15 +50,32 @@ int anagram(char *str1, char *str2){
 	return strcmp(str1, str2);
 }
 
+int anagram_2(char *str1, char *str2){
+
+	int i, hash_table[256];
+	memset(hash_table, 0, sizeof(hash_table));
+	for(i = 0; i < strlen(str1); ++i)
+		++hash_table[str1[i]];
+
+	for(i = 0; i < strlen(str2); ++i)
+		--hash_table[str2[i]];
+
+	for(i = 0; i < 256; ++i)
+		if(hash_table[i] != 0) 
+			return 1;
+	
+	return 0;
+}
+
 int main(){
 
-	char str1[] = "abccfeg";
+	char str1[] = "abcdfeg";
 	char str2[] = "agbcdef";
 
 //	int result = 0;
 //	str1[3] = 'k';
 //	if(strlen(str1) != strlen(str2)) return 0;
-	int result = anagram(str1, str2);
+	int result = anagram_2(str1, str2);
 //	quick_sort(str2, 0, strlen(str2) - 1);
 	printf("%s\n", str1);
 	printf("%s\n", str2);
