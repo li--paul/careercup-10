@@ -33,6 +33,7 @@ void print_list(node *head){
 
 void remove_dup_hash(node *head){
 
+	if(head == NULL) return;
 	node *temp = head;
 	node *temp_next = NULL;
 	int hash_table[256];
@@ -51,12 +52,36 @@ void remove_dup_hash(node *head){
 	}
 }
 
+void remove_dup_nobuffer(node *head){
+
+	if(head == NULL) return;
+	node *check = head, *end =head, *temp = NULL;
+	while(end->next){
+		check = head;
+		while(check != end->next){
+			if(check->data == end->next->data){
+				temp = end->next;
+				end->next = end->next->next;
+				free(temp);
+				break;
+			}
+			else{
+				check = check->next;
+			}
+		}
+		if(check == end->next){
+			end = end->next;
+		}
+	}
+}
+
 int main(){
 
 	char str[] = "Hello WHorld";
 	node *head = NULL;
 	head = add_sample_char(str);
-	remove_dup_hash(head);
+//	remove_dup_hash(head);
+	remove_dup_nobuffer(head);
 	print_list(head);
 
 	return 0;
