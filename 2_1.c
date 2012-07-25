@@ -1,3 +1,12 @@
+/*
+ *
+ * remove dup in list with c
+ * using hash table and no buffer
+ * by parker0203
+ *
+ */
+
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +16,7 @@ typedef struct node{
 	struct node *next;
 }node;
 
-node* add_sample_char(char *str){
+node* add_sample_char(char *str){  //create a list with string
 
 	node *temp = NULL;
 	node *head = NULL;
@@ -69,7 +78,7 @@ void remove_dup_nobuffer(node *head){
 				check = check->next;
 			}
 		}
-		if(check == end->next){
+		if(check == end->next){  // if removed any, no need to point to next
 			end = end->next;
 		}
 	}
