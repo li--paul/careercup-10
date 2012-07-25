@@ -55,6 +55,21 @@ void remove_dup_hash(list<int> &mylist){   //remove dup using hash table
 
 }
 
+void remove_dup_nobuffer(list<int> &mylist){  //using no buffer (remove front dup)
+
+	list<int>::iterator iter_check; //check dup with myiter
+	list<int>::iterator iter_myiter;
+
+	for(iter_myiter = ++mylist.begin(); iter_myiter != mylist.end();++iter_myiter){
+		for(iter_check = mylist.begin(); iter_check != iter_myiter; ++iter_check){
+			if(*iter_check == *iter_myiter){
+				mylist.erase(iter_check++); //remove the front dup
+				break;
+			}
+		}
+	}
+}
+
 int main(){
 	
 	list<int> mylist;
@@ -62,7 +77,8 @@ int main(){
 	add_dup_data(mylist);
 	print_list(mylist);
 
-	remove_dup_hash(mylist);
+//	remove_dup_hash(mylist);
+	remove_dup_nobuffer(mylist);
 	print_list(mylist);
 	
 	return 0;
