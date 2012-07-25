@@ -31,11 +31,32 @@ void print_list(node *head){
 	printf("\n");
 }
 
+void remove_dup_hash(node *head){
+
+	node *temp = head;
+	node *temp_next = NULL;
+	int hash_table[256];
+	memset(hash_table, 0, sizeof(hash_table));
+	hash_table[head->data] = 1;
+	while(temp->next){
+		if(hash_table[temp->next->data] == 1){
+			temp_next = temp->next;
+			temp->next = temp->next->next;
+			free(temp_next);
+		}
+		else{
+			hash_table[temp->next->data] = 1;
+			temp = temp->next;
+		}
+	}
+}
+
 int main(){
 
-	char str[] = "Hello World";
+	char str[] = "Hello WHorld";
 	node *head = NULL;
 	head = add_sample_char(str);
+	remove_dup_hash(head);
 	print_list(head);
 
 	return 0;
