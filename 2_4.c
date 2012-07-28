@@ -1,3 +1,11 @@
+/*
+ *
+ * 1's sum, (not consider last flow)
+ * by parker0203
+ *
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
