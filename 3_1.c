@@ -50,6 +50,7 @@ void make_dummy_stack(){
 		push_stack(i % 3, i + 3);
 	}
 }
+
 int main(){
 
 	make_dummy_stack();
