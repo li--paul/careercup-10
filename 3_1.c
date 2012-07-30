@@ -1,3 +1,11 @@
+/*
+ *
+ * use a single array to implement three stacks
+ * by parker0203
+ *
+ */
+
+
 #include <stdio.h>
 
 
