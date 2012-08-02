@@ -2,6 +2,9 @@
  *
  * increase stack size when over flow, using array pointer
  * by parker0203
+ * 
+ * if we need to add popAt(int index), we just need to make the pointer
+ * point the related stacks, and using stack_pointer as stack index
  *
  */
 
