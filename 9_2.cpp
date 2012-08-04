@@ -53,9 +53,9 @@ void sort_string(string &s){
 }
 
 /*
-void swap_string(string s1, string s2){
+void swap_string(string *s1, string *s2){
 
-	string temp = s1;
+	string *temp = s1;
 	s1 = s2;
 	s2 = temp;
 }
