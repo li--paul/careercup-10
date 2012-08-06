@@ -1,3 +1,11 @@
+/*
+ *
+ * search in sorted string with NULL
+ * by parker0203
+ *
+ */
+
+
 #include <iostream>
 #include <string>
 
