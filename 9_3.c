@@ -18,18 +18,18 @@ int bin_search(int a[], int element, int left, int right){
 
 	if(a[m] >= a[left]){
 		if(element >= a[left] && element <= a[m]){
-			return bin_search(a, element, left, m);
+			return bin_search(a, element, left, m - 1);
 		}
 		else{
-			return bin_search(a, element, m, right);
+			return bin_search(a, element, m + 1, right);
 		}
 	}
 	else{
 		if(element >= a[m] && element <= a[right]){
-			return bin_search(a, element, m, right);
+			return bin_search(a, element, m + 1, right);
 		}
 		else{
-			return bin_search(a, element, left, m);
+			return bin_search(a, element, left, m - 1);
 		}
 	}
 }
