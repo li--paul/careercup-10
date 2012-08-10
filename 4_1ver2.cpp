@@ -1,3 +1,11 @@
+/*
+ *
+ * check whether the tree is balanced
+ * by parker0203
+ *
+ */
+
+
 #include <iostream>
 #include <algorithm>
 
