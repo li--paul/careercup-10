@@ -23,7 +23,6 @@ struct tree_node{
 		item(new_item), left(l), right(r), parent(p){}
 };
 
-
 void tree_insert(int new_item, tree_node * & t, tree_node * p){
 
 	if(t == NULL){
