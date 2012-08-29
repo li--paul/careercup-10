@@ -1,6 +1,6 @@
 /*
  *
- * print all permutation of a string
+ * print all permutations of a string
  * by parker0203
  *
  */
