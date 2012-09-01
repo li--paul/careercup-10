@@ -20,8 +20,9 @@ void swap_int(int &a, int &b){
 
 void shuffle(int card[], int size){
 
+	int temp;
 	for(int i = 0; i < size; ++i){
-		int temp = rand() % (size - i) + i;
+		temp = rand() % (size - i) + i;
 		swap_int(card[i], card[temp]);
 	}
 }
