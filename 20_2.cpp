@@ -1,6 +1,6 @@
 /*
  *
- * shuffle card
+ * shuffle cards
  * by parker0203
  *
  */
